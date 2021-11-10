@@ -16,9 +16,9 @@ class App extends Component {
       </ul>
     </nav>
     <Switch>
-      <Route exact path="/" component={Home}/>
+    <Route exact path="/users/:id" render={ (props) => (<Users {...props} greetingMessage={"Good Morning"} />)} />
       <Route exact path="/about" component={About} />
-      <Route exact path="/users/:id" render={ (props) => (<Users {...props} greetingMessage={"Good Morning"} />)} />
+      <Route exact path="/" component={Home}/>
     </Switch>
     </BrowserRouter>
     );
