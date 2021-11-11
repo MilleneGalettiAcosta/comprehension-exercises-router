@@ -3,6 +3,7 @@ import Home from './components/Home';
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
 import About from './components/About';
 import Users from './components/Users';
+import StrictAccess from './components/StrictAccess';
 
 class App extends Component {
   render() {
@@ -18,6 +19,12 @@ class App extends Component {
     </nav>
     <Switch>
     <Route exact path="/users/:id" render={ (props) => (<Users {...props} greetingMessage={"Good Morning"} />)} />
+    <Route
+    path="/strict-access"
+    render={ () => (
+      <StrictAccess user={{username: 'joao', password: '1234'}} />
+    )}
+    />
       <Route exact path="/about" component={About} />
       <Route exact path="/" component={Home}/>
     </Switch>
